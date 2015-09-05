@@ -31,6 +31,10 @@ todoServer.use(bodyParser.urlencoded({ extended: false }));
 todoServer.use(cookieParser());
 todoServer.use(express.static(path.join(__dirname, 'public')));
 
+
+todoServer.use('/bower_components', express.static(__dirname + '/bower_components'));
+
+
 todoServer.use('/api', api);
 
 // catch 404 and forward to error handler

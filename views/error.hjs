@@ -1,3 +1,13 @@
-<h1>{{ message }}</h1>
-<h2>{{ error.status }}</h2>
-<pre>{{ error.stack }}</pre>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ error.status }} : {{ message }}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h1>TodoAPI Error <small>{{ error.status }} : {{ message }}</small></h1>
+      <pre class="bg-danger">{{ error.stack }}</pre>
+    </div>
+  </body>
+</html>
