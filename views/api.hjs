@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' />
+  </head>
+  <body>
+    <div class="container">
+    <h1>{{ title }}</h1>
+    <p>Welcome to {{ title }}</p>
+    <p>I will attempt to maintain a useful reference list of CRUD operations on this page for interacting with the API... Or I'll use the wiki on Github</p>
+    </div>
+  </body>
+</html>
