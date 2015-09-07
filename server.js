@@ -15,7 +15,8 @@ todoServer.set('views', path.join(__dirname, 'views'));
 todoServer.set('view engine', 'hjs');
 
 // connect to the Database
-mongoose.connect('mongodb://localhost/todoDB', function(err){
+var db_uri = process.env.MONGOLAB_URI || 'mongodb://localhost/todoDB';
+mongoose.connect(db_uri, function(err){
   if(err){
     console.log('Database Connection Error: '+err);
   } else {
