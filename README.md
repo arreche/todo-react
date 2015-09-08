@@ -7,7 +7,7 @@
 1. Install [node](https://nodejs.org) and [mongodb](https://www.mongodb.org)
 2. Install dependencies `npm install`
 3. Start mongo database `mongod --dbpath data --fork --logpath /dev/null`
-4. Build frontend `npm build`
+4. Build frontend `npm run build`
 5. Run backend `npm start`
 6. `open http://localhost:3000` in a web browser
 
