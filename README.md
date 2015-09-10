@@ -13,8 +13,6 @@
 
 ## Development
 
-### Frontend
-
-1. Run frontend with live reload `npm run dev`
+1. Run web and backend with live reload `npm run dev`
 2. `open http://localhost:8080/webpack-dev-server/`
-3. Edit files placed in `app` directory
+3. Edit any file
