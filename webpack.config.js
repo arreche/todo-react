@@ -21,4 +21,11 @@ module.exports = {
       }
     ],
   },
+  devServer: {
+      hot: true,
+      inline: true,
+      proxy: {
+        "/api/*": "http://localhost:3000"
+      }
+  }
 }
