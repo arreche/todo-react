@@ -23,13 +23,13 @@ mongoose.connect('mongodb://localhost/todoDB', function(err){
   }
 });
 
-// uncomment after placing your favicon in /build
-//todoServer.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+// uncomment after placing your favicon in /public
+//todoServer.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 todoServer.use(logger('dev'));
 todoServer.use(bodyParser.json());
 todoServer.use(bodyParser.urlencoded({ extended: false }));
 todoServer.use(cookieParser());
-todoServer.use(express.static(path.join(__dirname, 'build')));
+todoServer.use(express.static(path.join(__dirname, 'public')));
 
 
 todoServer.use('/bower_components', express.static(__dirname + '/bower_components'));

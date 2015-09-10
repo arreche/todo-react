@@ -1,12 +1,8 @@
 module.exports = {
-  context: __dirname + "/app",
-  entry: {
-    javascript: "./app.js",
-    html: "./index.html",
-  },
+  entry: './app/main.js', 
   output: {
     filename: "bundle.js",
-    path: __dirname + "/build",
+    path: __dirname + "/public",
   },
   module: {
     loaders: [
@@ -16,13 +12,13 @@ module.exports = {
         loaders: ["react-hot", "babel-loader"],
       },
       {
-        test: /\.html$/,
-        loader: "file?name=[name].[ext]",
-      },
-      {
         test: /\.sass$/,
         loader: "style!css!sass"
       },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=8192'
+      }
     ],
   },
 }
