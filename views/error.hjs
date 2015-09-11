@@ -6,7 +6,8 @@
   </head>
   <body>
     <div class="container">
-      <h1>TodoAPI Error <small>{{ error.status }} : {{ message }}</small></h1>
+      <h1>TodoAPI Error</h1>
+      <h3>{{ error.status }} - {{ message }}</h3>
       <pre class="bg-danger">{{ error.stack }}</pre>
     </div>
   </body>
