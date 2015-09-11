@@ -41,7 +41,7 @@ router.get('/todo/', function(req, res) {
 });
 
 //create a new todo list
-router.put('/todo/', function(req, res, next) {
+router.post('/todo/', function(req, res, next) {
   console.log("creating todo list")
   var todoName = req.body.todoName || "Todo List";
   var newTodoList = new todoList({
@@ -76,7 +76,7 @@ router.get('/todo/:todoListId', function(req, res, next) {
 });
 
 //create a task associated with the todo list in the URL
-router.put('/todo/:todoListId/task', function(req, res, next) {
+router.post('/todo/:todoListId/task', function(req, res, next) {
   //default values
   var todoListId = req.params.todoListId.toString();
   todoList.count({"_id": todoListId}).then(
@@ -109,7 +109,7 @@ router.put('/todo/:todoListId/task', function(req, res, next) {
 
 
 //update a todo list's details
-router.post('/todo/:todoListId', function(req, res, next) {
+router.put('/todo/:todoListId', function(req, res, next) {
   var todoListId = req.params.todoListId.toString();
   var query     = { '_id' : todoListId };
   todoList.count(query)
@@ -141,7 +141,7 @@ router.post('/todo/:todoListId', function(req, res, next) {
 });
 
 // update a task within a specified todo list
-router.post('/todo/:todoListId/task/:taskId', function(req, res, next) {
+router.put('/todo/:todoListId/task/:taskId', function(req, res, next) {
   var todoListId  = req.params.todoListId;
   todoList.count({ '_id' : todoListId })
   .then(

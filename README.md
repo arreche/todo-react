@@ -8,7 +8,7 @@ The Mongodb database connection is implemented, so all information stored is per
 
 * * *
 
-### Create Records - HTTP PUT REQUEST
+### Create Records - HTTP POST REQUEST
 
 #### /api/todo/
 
@@ -118,7 +118,7 @@ Returns an object containing two values, todoList contains the details of the To
 
 * * *
 
-### Update Records - HTTP POST REQUEST
+### Update Records - HTTP PUT REQUEST
 
 #### /api/todo/<todoListId>
 

@@ -33,7 +33,7 @@
       <p>The Mongodb database connection is implemented, so all information stored is persistant. Please ensure that mongod is running, otherwise it won't work.</p>
 
       <hr>
-      <h3>Create Records - HTTP PUT REQUEST</h3>
+      <h3>Create Records - HTTP POST REQUEST</h3>
 
       <h4>/api/todo/</h4>
       <p>Creates a new todo list.</p>
@@ -131,13 +131,13 @@
             <li><b>"todoId"</b> : A reference to the MongoDB unique Id string of the Todo List that this task belongs to... There might be a better way to do this with populate() but I couldn't figure it out.</li>
             <li><b>"taskName"</b> : A string representing name of the task</li>
             <li><b>"taskDescription"</b> : A string representing a description of the task</li>
-            <li><b>"taskDeadline"</b> : a <a href="http://www.w3.org/Protocols/rfc822/">RCF-822</a> formatted date representing the deadline of a task</li>
+            <li><b>"taskDeadline"</b> : A <a href="http://www.w3.org/Protocols/rfc822/">RCF-822</a> formatted date representing the deadline of a task</li>
             <li><b>"__v"</b> : Version number property automatically added by Mongoose</li>
           </ul>
         </li>
       </ul>
       <hr>
-      <h3>Update Records - HTTP POST REQUEST</h3>
+      <h3>Update Records - HTTP PUT REQUEST</h3>
 
       <h4>/api/todo/&lt;todoListId&gt;</h4>
       <p>Update a Todo List's details (i.e. its name).</p>
