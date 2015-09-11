@@ -1,6 +1,4 @@
-# API Documentation
-
-Any problems, please feel free to ping Jafit on Slack.
+Any problems, please feel free to ping Jafit on Slack. And don't be afraid to let me know how and why my code is bad, I'm trying to learn.
 
 ### Database
 
@@ -18,13 +16,13 @@ Creates a new todo list.
 
 *   **todoName** - _String_ - Specifies the name of the Todo List. If not present; defaults to "Todo List".
 
-#### /api/todo/<todoListId>/task
+#### /api/todo/:todoListId:/task
 
-Create a task within the todolist specified by <todoListId>.
+Create a task within the todolist specified by :todoListId:.
 
 **Parameters - Passed via URL and x-www-form-urlencoded**
 
-*   **<todoListId>** : _String passed via URL_ - Mongo _id string specifying which Todo List you want to add a task to.
+*   **:todoListId:** : _String passed via URL_ - Mongo _id string specifying which Todo List you want to add a task to.
 *   **taskName** : _String_ - Specifies the name of the task that you are creating. If not present; defaults to "Task".
 *   **taskDescription** : _String_ - The description of the task that you are creating. If not present; defaults to empty string.
 *   **taskDeadline** : _Date_ - A [RCF-822](http://www.w3.org/Protocols/rfc822/) formatted date string representing the time that the deadline of the task. If not present; defaults to _undefined_.
@@ -58,13 +56,13 @@ Returns an Array containing objects that represent.
 *   **"todoName"** : A string representing the name of the Todo List
 *   **"__v"** : Version number property automatically added by Mongoose
 
-#### /api/todo/<todoListId>
+#### /api/todo/:todoListId:
 
 Retrieve a todo list and its associated tasks.
 
 **Parameters - Passed via URL only**
 
-*   **<todoListId>** - _String passed via URL_ - Mongo _id string specifying which Todo List you want to retrieve.
+*   **:todoListId:** - _String passed via URL_ - Mongo _id string specifying which Todo List you want to retrieve.
 
 Returns an object containing two values, todoList contains the details of the Todo List itself, while tasks contains an array which contains all of the Tasks.
 
@@ -120,25 +118,25 @@ Returns an object containing two values, todoList contains the details of the To
 
 ### Update Records - HTTP PUT REQUEST
 
-#### /api/todo/<todoListId>
+#### /api/todo/:todoListId:
 
 Update a Todo List's details (i.e. its name).
 
 **Parameters - Passed via URL and x-www-form-urlencoded**
 
-*   **<todoListId>** : _String passed via URL_ - Mongo _id string specifying which Todo List the task belongs to.
+*   **:todoListId:** : _String passed via URL_ - Mongo _id string specifying which Todo List the task belongs to.
 *   **todoName** : _String_ - Specifies the name of the Todo List. If not present; retains previous value.
 
 Returns an object containing the updated details of the Todo List that you just altered
 
-#### /api/todo/<todoListId>/task/<taskId>
+#### /api/todo/:todoListId:/task/:taskId:
 
 Update the specified Task within a specified Todo List
 
 **Parameters - Passed via URL and x-www-form-urlencoded**
 
-*   **<todoListId>** : _String passed via URL_ - Mongo _id string specifying which Todo List the task belongs to.
-*   **<taskId>** : _String passed via URL_ - Mongo _id string specifying which Task you want to update.
+*   **:todoListId:** : _String passed via URL_ - Mongo _id string specifying which Todo List the task belongs to.
+*   **:taskId:** : _String passed via URL_ - Mongo _id string specifying which Task you want to update.
 *   **taskName** : _String_ - Specifies The name of the task that you are creating. If not present; retains previous value.
 *   **taskDescription** : _String_ - The description of the task that you are creating. If not present; retains previous value.
 *   **taskDeadline** : _Date_ - A [RCF-822](http://www.w3.org/Protocols/rfc822/) formatted date string representing the time that the deadline of the task. If not present; retains previous value.
@@ -149,23 +147,21 @@ Returns an object containing the updated details of the individual Task that you
 
 ### Delete Records - HTTP DELETE REQUEST
 
-#### /api/todo/<todoListId>/delete/
+#### /api/todo/:todoListId:
 
 Delete a Todo List and all of its associated Tasks
 
 **Parameters - Passed via URL only**
 
-*   **<todoListId>** - _String passed via URL_ - Mongo _id string specifying which Todo List to be delted.
+*   **:todoListId:** - _String passed via URL_ - Mongo _id string specifying which Todo List to be delted.
 
-#### /api/todo/<todoListId>/task/
+#### /api/todo/:todoListId:/task/
 
 Delete one or more tasks within a specified Todo List
 
 **Parameters - Passed via URL and x-www-form-urlencoded**
 
-*   **<todoListId>** - _String passed via URL_ - Mongo _id string specifying which Todo List the Task belongs to.
+*   **:todoListId:** - _String passed via URL_ - Mongo _id string specifying which Todo List the Task belongs to.
 *   **deleteIdArray** - _Array_ - An array containing 1 or more task mongo _id strings to be deleted.
 
 * * *
-
-Any problems feel free to ping Jafit on Slack.

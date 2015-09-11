@@ -41,11 +41,11 @@
       <ul>
         <li><b>todoName</b> - <i>String</i> - Specifies the name of the Todo List. If not present; defaults to "Todo List".</li>
       </ul>
-      <h4>/api/todo/&lt;todoListId&gt;/task</h4>
-      <p>Create a task within the todolist specified by &lt;todoListId&gt;.</p>
+      <h4>/api/todo/:todoListId:/task</h4>
+      <p>Create a task within the todolist specified by :todoListId:.</p>
       <b>Parameters - Passed via URL and x-www-form-urlencoded</b>
       <ul>
-        <li><b>&lt;todoListId&gt;</b> : <i>String passed via URL</i> - Mongo _id string specifying which Todo List you want to add a task to.</li>
+        <li><b>:todoListId:</b> : <i>String passed via URL</i> - Mongo _id string specifying which Todo List you want to add a task to.</li>
         <li><b>taskName</b> : <i>String</i> - Specifies the name of the task that you are creating. If not present; defaults to "Task".</li>
         <li><b>taskDescription</b> : <i>String</i> - The description of the task that you are creating. If not present; defaults to empty string.</li>
         <li><b>taskDeadline</b> : <i>Date</i> - A <a href="http://www.w3.org/Protocols/rfc822/">RCF-822</a> formatted date string representing the time that the deadline of the task. If not present; defaults to <i>undefined</i>.</li>
@@ -75,11 +75,11 @@
         <li><b>"todoName"</b> : A string representing the name of the Todo List</li>
         <li><b>"__v"</b> : Version number property automatically added by Mongoose</li>
       </ul>
-      <h4>/api/todo/&lt;todoListId&gt;</h4>
+      <h4>/api/todo/:todoListId:</h4>
       <p>Retrieve a todo list and its associated tasks.</p>
       <b>Parameters - Passed via URL only</b>
       <ul>
-        <li><b>&lt;todoListId&gt;</b> - <i>String passed via URL</i> - Mongo _id string specifying which Todo List you want to retrieve.</li>
+        <li><b>:todoListId:</b> - <i>String passed via URL</i> - Mongo _id string specifying which Todo List you want to retrieve.</li>
       </ul>
       <p>Returns an object containing two values, todoList contains the details of the Todo List itself, while tasks contains an array which contains all of the Tasks.</p>
       <b>Sample output of a Todo List with 3 Tasks:</b>
@@ -139,20 +139,20 @@
       <hr>
       <h3>Update Records - HTTP PUT REQUEST</h3>
 
-      <h4>/api/todo/&lt;todoListId&gt;</h4>
+      <h4>/api/todo/:todoListId:</h4>
       <p>Update a Todo List's details (i.e. its name).</p>
       <b>Parameters - Passed via URL and x-www-form-urlencoded</b>
       <ul>
-        <li><b>&lt;todoListId&gt;</b> : <i>String passed via URL</i> - Mongo _id string specifying which Todo List the task belongs to.</li>
+        <li><b>:todoListId:</b> : <i>String passed via URL</i> - Mongo _id string specifying which Todo List the task belongs to.</li>
         <li><b>todoName</b> : <i>String</i> - Specifies the name of the Todo List. If not present;  retains previous value.</li>
       </ul>
       <p>Returns an object containing the updated details of the Todo List that you just altered</p>
-      <h4>/api/todo/&lt;todoListId&gt;/task/&lt;taskId&gt;</h4>
+      <h4>/api/todo/:todoListId:/task/:taskId:</h4>
       <p>Update the specified Task within a specified Todo List</p>
       <b>Parameters - Passed via URL and x-www-form-urlencoded</b>
       <ul>
-        <li><b>&lt;todoListId&gt;</b> : <i>String passed via URL</i> - Mongo _id string specifying which Todo List the task belongs to.</li>
-        <li><b>&lt;taskId&gt;</b> : <i>String passed via URL</i> - Mongo _id string specifying which Task you want to update.</li>
+        <li><b>:todoListId:</b> : <i>String passed via URL</i> - Mongo _id string specifying which Todo List the task belongs to.</li>
+        <li><b>:taskId:</b> : <i>String passed via URL</i> - Mongo _id string specifying which Task you want to update.</li>
         <li><b>taskName</b> : <i>String</i> - Specifies The name of the task that you are creating. If not present; retains previous value.</li>
         <li><b>taskDescription</b> : <i>String</i> - The description of the task that you are creating. If not present; retains previous value.</li>
         <li><b>taskDeadline</b> : <i>Date</i> - A <a href="http://www.w3.org/Protocols/rfc822/">RCF-822</a> formatted date string representing the time that the deadline of the task. If not present;  retains previous value.</li>
@@ -161,18 +161,18 @@
       <hr>
       <h3>Delete Records - HTTP DELETE REQUEST</h3>
 
-      <h4>/api/todo/&lt;todoListId&gt;/delete/</h4>
+      <h4>/api/todo/:todoListId:/delete/</h4>
       <p>Delete a Todo List and all of its associated Tasks</p>
       <b>Parameters - Passed via URL only</b>
       <ul>
-        <li><b>&lt;todoListId&gt;</b> - <i>String passed via URL</i> - Mongo _id string specifying which Todo List to be delted.</li>
+        <li><b>:todoListId:</b> - <i>String passed via URL</i> - Mongo _id string specifying which Todo List to be delted.</li>
       </ul>
 
-      <h4>/api/todo/&lt;todoListId&gt;/task/</h4>
+      <h4>/api/todo/:todoListId:/task/</h4>
       <p>Delete one or more tasks within a specified Todo List</p>
       <b>Parameters - Passed via URL and x-www-form-urlencoded</b>
       <ul>
-        <li><b>&lt;todoListId&gt;</b> - <i>String passed via URL</i> - Mongo _id string specifying which Todo List the Task belongs to.</li>
+        <li><b>:todoListId:</b> - <i>String passed via URL</i> - Mongo _id string specifying which Todo List the Task belongs to.</li>
         <li><b>deleteIdArray</b> - <i>Array</i> - An array containing 1 or more task mongo _id strings to be deleted.</li>
       </ul>
       <hr>

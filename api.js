@@ -40,16 +40,6 @@ router.get('/todo/', function(req, res) {
   getDocuments(res, todoList);
 });
 
-//create a new todo list
-router.post('/todo/', function(req, res, next) {
-  console.log("creating todo list")
-  var todoName = req.body.todoName || "Todo List";
-  var newTodoList = new todoList({
-    "todoName" : todoName
-  });
-  createDocument(res, newTodoList);
-});
-
 //Get a todo list and get its associated tasks
 router.get('/todo/:todoListId', function(req, res, next) {
   todoListId = req.params.todoListId;
@@ -73,6 +63,16 @@ router.get('/todo/:todoListId', function(req, res, next) {
       res.send(err.message)
     }
   );
+});
+
+//create a new todo list
+router.post('/todo/', function(req, res, next) {
+  console.log("creating todo list")
+  var todoName = req.body.todoName || "Todo List";
+  var newTodoList = new todoList({
+    "todoName" : todoName
+  });
+  createDocument(res, newTodoList);
 });
 
 //create a task associated with the todo list in the URL
@@ -208,7 +208,7 @@ router.delete('/todo/:todoListId/task', function(req, res, next) {
 });
 
 //delete a todo list and all tasks associated with it.
-router.delete('/todo/:todoListId/delete', function(req, res, next) {
+router.delete('/todo/:todoListId', function(req, res, next) {
   deleteId = req.params.todoListId;
   var todoQuery = {};
   todoQuery._id = deleteId;
