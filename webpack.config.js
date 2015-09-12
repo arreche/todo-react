@@ -1,3 +1,5 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   entry: './app/main.js', 
   output: {
@@ -30,5 +32,10 @@ module.exports = {
       proxy: {
         "/api/*": "http://localhost:3000"
       }
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Todo-React'
+    })
+  ]
 }

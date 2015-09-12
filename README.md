@@ -1,3 +1,5 @@
+# Todo-React
+
 * https://www.reddit.com/r/jstogether/comments/3jidkr/project_3_todo_app/
 
 ## Setup
@@ -14,10 +16,10 @@
 ### Frontend
 
 1. Run frontend with live reload `npm run dev`
-2. `open http://localhost:8080/webpack-dev-server/`
+2. `open http://localhost:8080
 3. Edit files placed in `app` directory
 
-#API Documentation
+## API Documentation
 
 Any problems, please feel free to ping Jafit on Slack. And don't be afraid to let me know how and why my code is bad, I'm trying to learn.
 
