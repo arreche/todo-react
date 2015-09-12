@@ -1,10 +1,10 @@
 import React from 'react';
-import Hello from './component.jsx';
+import TodoApp from './todoApp.jsx';
 
 import './styles.sass';
 
 main();
 
 function main() {
-  React.render(<Hello />, document.getElementById('app'));
+  React.render(<TodoApp />, document.body);
 }
