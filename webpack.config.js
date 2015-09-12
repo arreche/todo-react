@@ -21,6 +21,11 @@ module.exports = {
       }
     ],
   },
+  resolve : {
+    alias: {
+        jquery: __dirname + '/node_modules/jquery/dist/jquery.js'
+    }
+  },
   devServer: {
       proxy: {
         "/api/*": "http://localhost:3000"

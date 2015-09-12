@@ -1,3 +1,4 @@
+import $ from 'jquery';
 
 export default class HttpClient {
     
@@ -10,6 +11,7 @@ export default class HttpClient {
                 success: resolve,
                 error: reject,
                 traditional: true
+            });
         });
     }
     
