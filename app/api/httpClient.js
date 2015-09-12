@@ -3,7 +3,7 @@ import $ from 'jquery';
 export default class HttpClient {
     
     GET(url, queryParams) {
-        return _buildRequest({
+        return this._buildRequest({
             method: 'GET',
             url: url,
             data: queryParams
@@ -11,7 +11,7 @@ export default class HttpClient {
     }
     
     POST(url, data) {
-        return _buildRequest({
+        return this._buildRequest({
             method: 'POST',
             url: url,
             data: data
@@ -19,7 +19,7 @@ export default class HttpClient {
     }
     
     PUT(url, data) {
-        return _buildRequest({
+        return this._buildRequest({
             method: 'PUT',
             url: url,
             data: data
@@ -27,19 +27,19 @@ export default class HttpClient {
     }
     
     DELETE(url, data) {
-        return _buildRequest({
+        return this._buildRequest({
             method: 'DELETE',
             url: url,
             data: data
         });
     }
     
-    _buildRequest(url, method, data) {
+    _buildRequest(args) {
         return new Promise((resolve, reject) => {
             $.ajax({
-                method: method,
-                url: url,
-                data: data,
+                method: args.method,
+                url: args.url,
+                data: args.data,
                 success: resolve,
                 error: reject,
                 traditional: true
