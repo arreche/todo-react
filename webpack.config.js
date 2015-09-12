@@ -1,3 +1,5 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   entry: './app/main.js', 
   output: {
@@ -21,4 +23,9 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Todo-React'
+    })
+  ]
 }
