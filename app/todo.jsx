@@ -3,6 +3,10 @@ var Router = require('react-router');
 var Link = Router.Link;
 
 module.exports = React.createClass({
+  propTypes: {
+    todo: React.PropTypes.array.isRequired,
+    onSelect: React.PropTypes.func.isRequired,
+  },
   render: function() {
     var self = this;
     return (

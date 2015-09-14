@@ -1,21 +1,8 @@
-var React = require ('react');
+var React = require('react');
 var Router = require('react-router');
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
-var NotFoundRoute = Router.NotFoundRoute;
+var routes = require('./app/routes');
 
-var App = require('./app/app.jsx');
-var Todos = require('./app/todos.jsx');
-var Todo = require('./app/todo.jsx');
-
-require('./app/styles.sass');
-
-var routes = (
-  <Route handler={App}>
-    <DefaultRoute handler={Todos} />
-    <Route name="todo" path="todo" handler={Todo}></Route>
-  </Route>
-);
+require('./app/styles');
 
 Router.run(routes, function(Handler) {
   React.render(<Handler />, document.body);

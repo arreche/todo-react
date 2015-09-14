@@ -26,7 +26,8 @@ module.exports = {
   resolve : {
     alias: {
         jquery: __dirname + '/node_modules/jquery/dist/jquery.js'
-    }
+    },
+    extensions: ['', '.js', '.jsx', '.sass'] 
   },
   devServer: {
       proxy: {

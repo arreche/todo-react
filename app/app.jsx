@@ -1,8 +1,7 @@
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
-
-var data = require('./data.js');
+var data = require('./data');
 
 module.exports = React.createClass({
   getInitialState: function() {

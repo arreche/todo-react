@@ -3,16 +3,19 @@ var Router = require('react-router');
 var Link = Router.Link;
 
 module.exports = React.createClass({
+  propTypes: {
+    todos: React.PropTypes.array.isRequired,
+  },
   render: function() {
     var self = this;
     return (
       <div>
         <h2>Todos</h2>
         <ul>
-          {this.props.todos.map(function(data, i) {
+          {this.props.todos.map(function(todo, i) {
             return (
-              <li key={i} onClick={self.props.onSelect}>
-                <Link to={`/todo`}>{data.todoName}</Link>
+              <li key={i}>
+                <Link to={`/todos/${todo._id}`}>{todo.todoName}</Link>
               </li>
               )
           })}
