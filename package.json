@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "build": "webpack",
-    "dev": "webpack-dev-server --hot --inline"
+    "dev": "webpack-dev-server --hot --inline --config webpack.config.js"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -13,6 +13,7 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "hjs": "~0.0.6",
+    "jquery": "^2.1.4",
     "mongoose": "^4.1.5",
     "morgan": "~1.6.1",
     "react": "^0.13.3",
