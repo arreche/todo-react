@@ -7,6 +7,13 @@ module.exports = {
     path: __dirname + "/public",
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      },
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
